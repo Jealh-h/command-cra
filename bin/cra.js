@@ -2,17 +2,15 @@
 
 "use strict"
 const { program } = require('commander');
+const createReactApp = require('../lib/create.js');
+const pkgJSON = require('../package.json');
 
-console.log("hello");
-program
-  .option('--first')
-  .option('-s,--separator <char>');
+program.version(`command-cra: v${pkgJSON.version}`, '-v,--version')
 
 program.command("create <app-name>")
   .description("create a new react project")
   .action((source, destination) => {
-    console.log("source:", source,
-      "\n", "destination:", destination);
+    createReactApp(source, destination);
   })
 
 program.parse();
