@@ -1,10 +1,17 @@
 #! /usr/bin/env node
 
 "use strict"
-const { program } = require('commander');
-const createReactApp = require('../lib/create.js');
-const cra = require('../lib/cra.js');
-const pkgJSON = require('../package.json');
+import { program } from 'commander';
+import createReactApp from '../lib/create.js';
+import cra from '../lib/cra.js';
+// import pkgJSON from '../package.json' assert { type: 'json' };
+// const pkgJSON = require('../package.json')
+import { readFile } from 'fs/promises';
+const pkgJSON = JSON.parse(
+  await readFile(
+    new URL('../package.json', import.meta.url)
+  )
+);
 
 program.version(`command-cra: v${pkgJSON.version}`, '-v,--version')
 
