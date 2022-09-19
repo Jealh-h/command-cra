@@ -1,24 +1,20 @@
-import { execSync } from 'child_process'
+import { execSync } from "child_process";
 
 // cache
-let _hasYarn;
+let _hasYarn: boolean;
 
 export function hasYarn() {
   if (_hasYarn !== null) {
     return true;
   }
   try {
-    execSync('yarn --version', { stdio: "ignore" });
+    execSync("yarn --version", { stdio: "ignore" });
     return (_hasYarn = true);
   } catch (error) {
     return (_hasYarn = false);
   }
 }
 
-export function hasPnpm() {
+export function hasPnpm() {}
 
-}
-
-export function hasNpm() {
-
-}
+export function hasNpm() {}
