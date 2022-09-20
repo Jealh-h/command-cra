@@ -3,34 +3,33 @@
   "version": "1.0.0",
   "description": "Command line interface for create react app",
   "bin": {
-    "cra": "./bin/cra.js"
+    "cra": "./tsc-build/lib/bin/cra.js"
   },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsup",
-    "prepare": "npx husky install"
+    "build:tsc": "npx tsc && npx tsc -p tsconfig.cjs.json"
   },
-  "main": "dist/",
-  "module": "es",
   "keywords": [],
   "author": "Jealh",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "tsc-build"
   ],
   "dependencies": {
     "@types/cross-spawn": "^6.0.2",
     "@types/inquirer": "^9.0.1",
     "@types/node": "^18.7.18",
-    "chalk": "^5.0.1",
+    "chalk": "^4",
     "commander": "^9.2.0",
     "cross-spawn": "^7.0.3",
     "inquirer": "^8.2.2",
     "minimist": "^1.2.6",
-    "ora": "^6.1.2",
+    "ora": "^5",
     "typescript": "^4.8.3"
   },
-  "type": "module",
   "engines": {
     "node": ">= 12.0.0"
   },

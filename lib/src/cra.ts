@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import spawn from "cross-spawn";
 import { exec } from "child_process";
-import type { CommandOption } from "./types/cmd-options";
+import type { CommandOption } from "../types/cmd-options";
 
 export default function createAppByCRA(
   appName: string,

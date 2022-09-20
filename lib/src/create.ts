@@ -1,6 +1,6 @@
 import ora from "ora";
 import Creator from "./Creator.js";
-import type { CommandOption } from "./types/cmd-options.js";
+import type { CommandOption } from "../types/cmd-options.js";
 
 const spinner = ora("下载中...");
 

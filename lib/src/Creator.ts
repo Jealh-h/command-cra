@@ -1,9 +1,10 @@
 import EventEmitter from "events";
 import inquirer from "inquirer";
-import createAppByCRA from "./cra.js";
-import { validateFeaturesOptions } from "./utils/validate";
-import { TEMPLATE, FEATURES, Answers } from "./defaultOptions.js";
-import { CommandOption } from "./types/cmd-options.js";
+import createAppByCRA from "./cra";
+import { validateFeaturesOptions } from "../utils/validate";
+import { TEMPLATE, FEATURES, Answers } from "./defaultOptions";
+import type { CommandOption } from "../types/cmd-options";
+
 export default class Creator extends EventEmitter {
   appName: string;
   cliOptions: CommandOption;
