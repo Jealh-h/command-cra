@@ -15,7 +15,7 @@ program.version(`command-cra: v${pkgJSON.version}`, "-v,--version");
 
 program
   .argument("<app-name>")
-  .option("-t,--template <templateName>", "use template to CRA")
+  .option("-t,--template <templateName>", "use template to create react app")
   .description("use create-react-app create a app")
   .action((appName, options) => {
     cra(appName, options);
